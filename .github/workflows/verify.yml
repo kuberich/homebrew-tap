@@ -1,0 +1,45 @@
+name: Homebrew candidate
+on:
+  push:
+    branches: [main]
+    paths: ["Formula/**"]
+  pull_request:
+permissions:
+  contents: read
+concurrency:
+  group: homebrew-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  formula:
+    name: Formula (${{ matrix.os }})
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 45
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-24.04, macos-latest]
+    env:
+      HOMEBREW_NO_ANALYTICS: '1'
+      HOMEBREW_NO_INSTALL_CLEANUP: '1'
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Locate the runner Homebrew installation
+        run: |
+          if [ -x /home/linuxbrew/.linuxbrew/bin/brew ]; then
+            eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+          fi
+          brew --version
+          echo "$(brew --prefix)/bin" >> "$GITHUB_PATH"
+      - name: Install this checkout as the tap and require all formula checks
+        run: |
+          export PATH="$(brew --prefix)/bin:$PATH"
+          tap="$(brew --repository)/Library/Taps/kuberich/homebrew-tap"
+          mkdir -p "$(dirname "$tap")"
+          ln -s "$GITHUB_WORKSPACE" "$tap"
+          brew style kuberich/tap/kuberich
+          brew audit --strict --online kuberich/tap/kuberich
+          brew install --build-from-source kuberich/tap/kuberich
+          brew test kuberich/tap/kuberich
+          brew uninstall kuberich/tap/kuberich
