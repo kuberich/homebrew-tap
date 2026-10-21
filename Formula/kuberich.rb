@@ -9,6 +9,13 @@ class Kuberich < Formula
   sha256 "01092781d557c656fec1f5cb5f62ea3b9a886f6cfdefaf607c34fd632efd31c2"
   license "Apache-2.0"
 
+  bottle do
+    root_url "https://github.com/kuberich/homebrew-tap/releases/download/kuberich-v0.2.0"
+    sha256 cellar: :any, arm64_sonoma: "ee8fe4174eb3e9d0332ecf1cf6474a8e5107da02603038e69dee2331fa14bf28"
+    sha256 cellar: :any, sequoia:      "ddc73e73e550f97158cdee3738b41c896733ab8642cce3ca9f26ffc4df9660a2"
+    sha256 cellar: :any, x86_64_linux: "1f1fd2523a9b837bc20d097bc8584e5efec933ef4510315036f6c5ae13b3475e"
+  end
+
   depends_on "kubernetes-cli"
   depends_on "libyaml"
   depends_on "python@3.14"
