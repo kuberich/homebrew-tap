@@ -1,12 +1,12 @@
-# Source version: 0.1.0
-# Source commit: 3dbf9c0118193aa11635baea6ae2a0b36bee4c6e
+# Source version: 0.2.0
+# Source commit: 344222174a85868bb7836ecd1fcc91e15f65d269
 class Kuberich < Formula
   include Language::Python::Virtualenv
 
   desc "Kubernetes terminal workspace built with Python and Textual"
   homepage "https://github.com/carloshm91/kuberich"
-  url "https://files.pythonhosted.org/packages/e4/60/ef87514d82703b8bcf49b7639a10776575e5af1e80896e9a71fb7b275a97/kuberich-0.1.0.tar.gz"
-  sha256 "c3b4fa5fae7877b19bdcb823e955952d594325827c175b6652f77e2d296cb3f3"
+  url "https://files.pythonhosted.org/packages/a7/13/f4661eb0dc756bbf99d5a92f452f4e20696fb4c88f205b3f0caa82b60ba4/kuberich-0.2.0.tar.gz"
+  sha256 "01092781d557c656fec1f5cb5f62ea3b9a886f6cfdefaf607c34fd632efd31c2"
   license "Apache-2.0"
 
   depends_on "kubernetes-cli"
@@ -19,8 +19,8 @@ class Kuberich < Formula
   end
 
   resource "aiohttp" do
-    url "https://files.pythonhosted.org/packages/58/d9/22ce5786ac0c1653ae8b6c23bded02c1686d11f0dbb45b31ce128e0df985/aiohttp-3.14.3.tar.gz"
-    sha256 "9491196535a88924a60afd5b5f434b5b203b6cc616250878dbdb223a8f7844bc"
+    url "https://files.pythonhosted.org/packages/6c/4c/bdccd81e9ee225b69c60e7766c9a5b05364f118f4d383713b89a682d772d/aiohttp-3.14.5.tar.gz"
+    sha256 "5558a7f5a05af9ecf744af91e5baefc436f93c9333e656c27ec253f9a6bbe178"
   end
 
   resource "aiohttp-socks" do
@@ -39,8 +39,8 @@ class Kuberich < Formula
   end
 
   resource "certifi" do
-    url "https://files.pythonhosted.org/packages/a3/c2/24167ea9858356b47a87a50d39908bfdb72ceeefe0041586e704e5376b3a/certifi-2026.7.22.tar.gz"
-    sha256 "741e2c3b351ddf169a738da9f2c048608ff7f2c5cc02f1ebc6b118bb090d5d55"
+    url "https://files.pythonhosted.org/packages/a6/bd/1436c50cc46699de0230fbaacc1d1de7bfec413176099949e9d5112e88f2/certifi-2026.10.19.tar.gz"
+    sha256 "035c1e85572b141bf1c3a3eff0e33a8eb74917522f2559075ff8d2fea780a1ae"
   end
 
   resource "frozenlist" do
@@ -81,6 +81,11 @@ class Kuberich < Formula
   resource "multidict" do
     url "https://files.pythonhosted.org/packages/d6/99/1d4d69c3512d0ddbfa3a1b69cfd9a151012ab2eb4eabbb096201b1f0b7d8/multidict-6.9.1.tar.gz"
     sha256 "0f06e60fa190aa7abd0914c2a766736fdc8e9f34878c4346338534b73d1b20e2"
+  end
+
+  resource "packaging" do
+    url "https://files.pythonhosted.org/packages/7d/fa/3944b40b07da9ce895c0e6303a5ab7d53da063554f534556b134a54d6093/packaging-26.3.tar.gz"
+    sha256 "94edc256424af38762eb31306eed28beb9f0efc50a8837492c9d6fd6004aed79"
   end
 
   resource "platformdirs" do
