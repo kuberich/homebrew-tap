@@ -2,7 +2,7 @@
 
 The project-owned Homebrew distribution repository for [KubeRich](https://github.com/carloshm91/kuberich), a Kubernetes terminal workspace built with Python and Textual.
 
-The first formula is being prepared. After its reviewed activation, install it with:
+Install KubeRich from this tap:
 
 ```sh
 brew install kuberich/tap/kuberich
