@@ -1,20 +1,13 @@
-# Source version: 0.3.0
-# Source commit: b1f00706ff3448cded7818633c84ed77e3ca83af
+# Source version: 0.4.0
+# Source commit: 78ff8f720d4ffde34ea91193593823685433515f
 class Kuberich < Formula
   include Language::Python::Virtualenv
 
   desc "Kubernetes terminal workspace built with Python and Textual"
   homepage "https://github.com/carloshm91/kuberich"
-  url "https://files.pythonhosted.org/packages/8b/48/1db9e873a59bff8494444ac59f7c3acf75a16ce53934f978c1339cba600c/kuberich-0.3.0.tar.gz"
-  sha256 "9ba6d21bae12183c3480df2b16008e5b472506c362321794133f70b328c0898b"
+  url "https://files.pythonhosted.org/packages/09/4c/0459c865cd647e3fa4e68b2bf7048dd9a50a8d131981fb4f4db1c2ea6c2c/kuberich-0.4.0.tar.gz"
+  sha256 "4dd6b83d5c5080973349eb404fbe41de6806b466b1a534448f9ab769ba3305fc"
   license "Apache-2.0"
-
-  bottle do
-    root_url "https://github.com/kuberich/homebrew-tap/releases/download/kuberich-v0.3.0"
-    sha256 cellar: :any, arm64_sequoia: "3fc3e04dc98bc13bf2474cf4f138045bacddcb3e63624ab651e67b2784f8f217"
-    sha256 cellar: :any, sequoia:       "c5afdb324c0f2476dd4990a0eb162366af5196d3c556adcb8edaf1341565b103"
-    sha256 cellar: :any, x86_64_linux:  "8da036f2cb5f2192b0612bca75545a7bca1d81ed7033e807db0ab2c0f6a768f8"
-  end
 
   depends_on "kubernetes-cli"
   depends_on "libyaml"
